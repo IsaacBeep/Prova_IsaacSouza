@@ -168,3 +168,15 @@ button {
 button:hover {
     background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
 }
+
+/* Deixar a tabela centralizada */
+table {
+    width: 80%; 
+    margin: 20px auto; 
+    border-collapse: collapse; 
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    border-radius: 10px; /* Cantos arredondados */
+    overflow: hidden; /* Para arredondar os cantos da tabela */
+    text-align: left; /* Alinha o texto à esquerda */
+}
