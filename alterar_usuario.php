@@ -2,6 +2,7 @@
 
 session_start();
 require_once 'conexao.php';
+require_once 'menu.php';
 
 // VERFICIA SE O USUARIO DE ERMISSÃO DE ADM
 if ($_SESSION['perfil'] != 1) {
@@ -45,9 +46,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alterar Usuario</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="validacoes.js"></script>
 
     <!-- CERTIFIQUE-SE DE QUE O JAVASCRIPT ESTA SENDO CARREGADO CORRETAMENTE -->
     <script src="scripts.js"></script>
+
 </head>
 <body>
     <h2>Alterar Usuarios</h2>
@@ -65,9 +68,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         <form action="processa_alteracao_usuario.php" method="POST">
             <input type="hidden" name="id_usuario" value="<?=htmlspecialchars($usuario['id_usuario'])?>">
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" value="<?=htmlspecialchars($usuario['nome'])?>" required>
+            <input type="text" id="nome" name="nome" value="<?=htmlspecialchars($usuario['nome'])?>" required onkeyup="validarNome()">
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" value="<?=htmlspecialchars($usuario['email'])?>" required>
+            <input type="email" id="email" name="email" value="<?=htmlspecialchars($usuario['email'])?>" required onkeyup="validarEmail()">
             <label for="id_perfil">Perfil:</label>
             <select id="id_perfil" name="id_perfil">
                 <option value="1" <?=$usuario['id_perfil'] == 1 ? 'selected': ''?>>Administrador</option>

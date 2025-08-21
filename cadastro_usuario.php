@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'conexao.php';
-
+require_once 'menu.php';
 
 if ($_SESSION['perfil']!= 1){
     echo "Acesso Negado!";
@@ -36,12 +36,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Usuario</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
 </head>
 <body>
     <h2>Cadastrar Usuario</h2>
     <form action="cadastro_usuario.php" method="POST">
         <label for="nome">Nome: </label>
-        <input type="text" id="nome" name="nome" required>
+        <input type="text" id="nome" name="nome" required onkeyup="maiusculo(this)">
 
         <label for="email">E-mail: </label>
         <input type="email" id="email" name="email" required>

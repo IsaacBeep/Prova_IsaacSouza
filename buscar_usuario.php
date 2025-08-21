@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'conexao.php';
+require_once 'menu.php';
 
 if ($_SESSION['perfil'] != 1 && $_SESSION['perfil'] !=2) {
     echo "<script>alert('Acesso negado!');window.location.href='principal.php';</script>";
@@ -38,6 +39,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar Usuario</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
 </head>
 <body>
     <h2>Lista de Usuarios</h2>
