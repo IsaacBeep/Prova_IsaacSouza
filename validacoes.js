@@ -24,28 +24,11 @@ function validarFuncionario() {
     return true;
 }
 
-function validarUsuario() {
-    let nome = document.getElementById("nome_usuario").value;
-    let email = document.getElementById("email").value;
-    let perfil = document.getElementById("perfil").value;
+function validarNome(){
+    let nome = document.getElementById("nome").value;
 
-    
-    if (nome.length < 3) {
-        alert("O nome do suario deve ter pelo menos 3 caracteres.");
-        return false;
-    }
-
-    let regexPerfil = /^[0-9]{10,11}$/;
-    if (!regexPerfil.test(perfil)) {
-        alert("Digite um telefone válido (10 ou 11 dígitos).");
-        return false;
-    }
-
-    let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!regexEmail.test(email)) {
-        alert("Digite um e-mail válido.");
-        return false;
-    }
+    nome = nome.replace(/[0-9]/g, "");
+    document.getElementById("nome").value = nome;
 
     return true;
 }

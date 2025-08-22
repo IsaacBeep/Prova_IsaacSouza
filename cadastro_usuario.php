@@ -37,12 +37,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <title>Cadastrar Usuario</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
+    <script src="validacoes.js"></script>
 </head>
 <body>
     <h2>Cadastrar Usuario</h2>
     <form action="cadastro_usuario.php" method="POST">
         <label for="nome">Nome: </label>
-        <input type="text" id="nome" name="nome" required onkeyup="maiusculo(this)">
+        <input type="text" id="nome" name="nome" required onkeyup="validarNome()">
 
         <label for="email">E-mail: </label>
         <input type="email" id="email" name="email" required>
