@@ -32,3 +32,16 @@ function validarNome(){
 
     return true;
 }
+
+function validarTelefone(){
+    let variavel = document.getElementById("telefone").value;
+    variavel = variavel.replace(/\D/g, "");
+    variavel = variavel.replace(/^(\d\d)(\d)/g, "($1) $2"); // adiciona parenteses em volta dos dois primeiros dígitos
+    variavel = variavel.replace(/(\d{5})(\d)/, "$1-$2"); // adiciona o hífen entre o quarto e o quinto dígito
+    document.getElementById("telefone").value = variavel;
+    if (variavel.length > 9) {
+        alert("O telefone deve ter no máximo 9 caracteres.");
+        return false;
+    }
+    return variavel;
+}
