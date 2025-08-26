@@ -10,15 +10,15 @@ if ($_SESSION['perfil']!= 1){
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     $nome = $_POST['nome_cliente'];
-    $email = $_POST['endereco'];
+    $endereco = $_POST['endereco'];
     $telefone = $_POST['telefone'];
     $email = $_POST['email'];
     $sql = "INSERT INTO cliente(nome_cliente, endereco, telefone, email) VALUES(:nome_cliente, :endereco, :telefone, :email)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':nome_cliente', $nome);
-    $stmt->bindParam(':endereco', $email);
-    $stmt->bindParam(':telefone', $senha);
-    $stmt->bindParam(':email', $id_perfil);
+    $stmt->bindParam(':endereco', $endereco);
+    $stmt->bindParam(':telefone', $telefone);
+    $stmt->bindParam(':email', $email);
 
     if($stmt->execute()){
         echo "<script>alert('Cliente cadastrado com sucesso!')</script>";
@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <input type="text" id="endereco" name="endereco" required >
 
         <label for="telefone">Telefone: </label>
-        <input type="telefone" id="telefone" name="telefone" required>
+        <input type="text" id="telefone" name="telefone" required>
 
         <label for="email">E-mail: </label>
         <input type="email" id="email" name="email" required >
