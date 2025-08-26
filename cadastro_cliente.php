@@ -9,7 +9,7 @@ if ($_SESSION['perfil']!= 1){
 }
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    $nome = $_POST['nome_cliente'];
+    $nome = $_POST['nome'];
     $endereco = $_POST['endereco'];
     $telefone = $_POST['telefone'];
     $email = $_POST['email'];
@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 </head>
 <body>
     <h2>Cadastrar Cliente</h2>
-    <form action="cadastro_usuario.php" method="POST">
+    <form action="cadastro_cliente.php" method="POST">
         <label for="nome">Nome: </label>
         <input type="text" id="nome" name="nome" required onkeyup="validarNome()">
 
@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <input type="text" id="endereco" name="endereco" required >
 
         <label for="telefone">Telefone: </label>
-        <input type="text" id="telefone" name="telefone" required>
+        <input type="text" id="telefone" name="telefone" required onkeyup="validarTelefone()">
 
         <label for="email">E-mail: </label>
         <input type="email" id="email" name="email" required >
