@@ -68,8 +68,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         <form action="processa_alteracao_cliente.php" method="POST">
             <input type="hidden" name="id_cliente" value="<?=htmlspecialchars($cliente['id_cliente'])?>">
 
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" value="<?=htmlspecialchars($cliente['nome_cliente'])?>" required onkeyup="validarNome()">
+            <label for="nome_cliente">Nome:</label>
+            <input type="text" id="nome_cliente" name="nome_cliente" value="<?=htmlspecialchars($cliente['nome_cliente'])?>" required onkeyup="validarNome()">
 
             <label for="endereco">Endereço:</label>
             <input type="text" id="endereco" name="endereco" value="<?=htmlspecialchars($cliente['endereco'])?>" required onkeyup="validarEndereco()">

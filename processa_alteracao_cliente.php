@@ -15,8 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefone = $_POST['telefone'];
     $email = $_POST['email'];
     
-    //ATUALIZA OS DADOS DO USUARIO
-    $sql = "UPDATE cliente SET nome_cliente = :nome_cliente, endereco = :endereco, telefone = :telefone, email = :email, WHERE id_cliente = :id";
+    $sql = "UPDATE cliente SET nome_cliente = :nome_cliente, endereco = :endereco, telefone = :telefone, email = :email WHERE id_cliente = :id";
     $stmt = $pdo->prepare($sql);
 
     $stmt->bindParam(':nome_cliente', $nome_cliente);
