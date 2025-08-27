@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Envia a nova senha para o e-mail do usuário
         simularEnvioEmail($email, $senha_temporaria);
-        echo "<script>alert('Uma nova senha temporaria foi gerada e enviada (simulação). Verifique o arquivo emails_simulados.txt');window.location.href='login.php';</script>";
+        echo "<script>alert('Uma nova senha temporaria foi gerada e enviada (simulação). Verifique o arquivo emails_simulados.txt');window.location.href='index.php';</script>";
 
     } else {
         echo "<script>alert('E-mail não encontrado.');</script>";
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         <button type="submit">Enviar nova senha</button>
     </form>
-    <p><a href="login.php">Voltar para o login</a></p>
+    <p><a href="index.php">Voltar para o login</a></p>
     
 </body>
 </html>

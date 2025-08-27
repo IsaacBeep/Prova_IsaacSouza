@@ -28,6 +28,9 @@ function validarNome(){
     let nome = document.getElementById("nome").value;
 
     nome = nome.replace(/[0-9]/g, "");
+    nome = nome.replace(/[!-+]/g, "");
+    nome = nome.replace(/[@]/g, "");
+    nome = nome.replace(/[¨¨]/g, "");
     document.getElementById("nome").value = nome;
 
     return true;
