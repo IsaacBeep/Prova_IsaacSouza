@@ -76,6 +76,13 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php else: ?>
         <p>Nenhum usuario encontrado.</p>
     <?php endif; ?>
+
+    <div class="logout">
+        <form action="logout.php" method="POST">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+    
     <a href="cadastro_usuario.php">Cadastrar Novo Usuario</a>
     <br>
     <a href="principal.php">Voltar</a>

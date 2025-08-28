@@ -72,6 +72,13 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     <?php else: ?>
         <p>Nenhum cliente encontrado.</p>
     <?php endif; ?>
+
+    <div class="logout">
+        <form action="logout.php" method="POST">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+    
     <a href="principal.php">Voltar</a>
 </body>
 </html>

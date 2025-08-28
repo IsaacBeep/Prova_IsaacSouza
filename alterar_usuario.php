@@ -87,6 +87,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             <button type="reset">Cancelar</button>
         </form>
     <?php endif; ?>
+
+    <div class="logout">
+        <form action="logout.php" method="POST">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
     <a href="principal.php">Voltar</a>
 </body>
 </html>

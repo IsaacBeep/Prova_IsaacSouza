@@ -78,6 +78,13 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php else: ?>
         <p>Nenhum cliente encontrado.</p>
     <?php endif; ?>
+
+    <div class="logout">
+        <form action="logout.php" method="POST">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+    
     <a href="cadastro_cliente.php">Cadastrar Novo Cliente</a>
     <br>
     <a href="principal.php">Voltar</a>
